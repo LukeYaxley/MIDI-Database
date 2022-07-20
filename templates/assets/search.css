@@ -1,0 +1,20 @@
+body {
+  background-color: lightblue;
+}
+
+.card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.divider{
+    width:5px;
+    height:5px;
+    display:inline-block;
+}
+
+.midi-search {
+  font-size:20px;
+}
