@@ -7,9 +7,9 @@ def readFile(filename):
     notes = []
     for msg in mid:
         if msg.type == "note_on":# checks to see whether the note is one being pressed down or released only pressed down we want to see
-            print(msg)
+            #print(msg)
             notes.append(msg.note)
-            print(msg.note)
+            #print(msg.note)
     return(notes)
 def compareNotes(notes1,notes2):
     length = len(notes1)
@@ -21,9 +21,17 @@ def compareNotes(notes1,notes2):
     #print(similarity)
     return(similarity/length)
 
-def check(query, notes):#doesn't work
-    print("Here")
-    return (query) in zip(notes, notes[1:], notes[2:])
+
+def check(query,arr):
+# checks to see if the query is in the array
+  if len(arr) < 3:
+    return False
+  for i in range(len(arr)-2):
+    #print(arr[i:i+3])
+    if arr[i:i+3] == query:
+      return True
+  return False
 #print(compareNotes(readFile("ABBA_-_SOS"),readFile("ABBA_-_SOS"))) #test statement
-print(readFile("ABBA_-_SOS")[14:20])
-print(check(readFile("ABBA_-_SOS")[14:20]),readFile("ABBA_-_SOS"))
+#print(readFile("ABBA_-_SOS")[14:20])
+print(check([53,57,50], readFile("ABBA_-_SOS")))
+#print(readFile("ABBA_-_SOS")[67])
